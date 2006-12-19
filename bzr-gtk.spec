@@ -1,4 +1,4 @@
-Summary:	Plugin for Bazaar-NG providing GUI to most operations.
+Summary:	Plugin for Bazaar-NG providing GUI to most operations
 Summary(pl):	Wtyczka do Bazaar-NG udostêpniaj±ca interfejs graficzny dla wiêkszo¶ci operacji
 Name:		bzr-gtk
 Version:	0.13.0
@@ -28,7 +28,7 @@ interfaces to most Bazaar operations. Provided commands are:
 %description -l pl
 bzr-gtk jest wtyczk± dla Bazaar-NG (bzr), która ma na celu
 dostarczenie graficznego interfejsu GTK+ dla wiêkszo¶ci poleceñ
-Bazaar.  Dostêpnymi poleceniami s±:
+Bazaar. Dostêpnymi poleceniami s±:
 - gcommit
 - gdiff
 - visualise
@@ -60,15 +60,14 @@ For full functionality, you need to install:
 - python-gnome (for Nautilus integration)
 EOF
 
-
 %postun
 %update_desktop_database_postun
 
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS README TODO
+%attr(755,root,root) %{_bindir}/*
 %{py_sitescriptdir}/*
 %{_pixmapsdir}/*
-%{_desktopdir}/*
+%{_desktopdir}/*.desktop
 %{_datadir}/olive
-%attr(755,root,root) %{_bindir}/*
