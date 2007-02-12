@@ -1,5 +1,5 @@
 Summary:	Plugin for Bazaar-NG providing GUI to most operations
-Summary(pl):	Wtyczka do Bazaar-NG udostêpniaj±ca interfejs graficzny dla wiêkszo¶ci operacji
+Summary(pl.UTF-8):   Wtyczka do Bazaar-NG udostÄ™pniajÄ…ca interfejs graficzny dla wiÄ™kszoÅ›ci operacji
 Name:		bzr-gtk
 Version:	0.13.0
 Release:	1
@@ -25,10 +25,10 @@ interfaces to most Bazaar operations. Provided commands are:
 - gannotate
 - gbranch
 
-%description -l pl
-bzr-gtk jest wtyczk± dla Bazaar-NG (bzr), która ma na celu
-dostarczenie graficznego interfejsu GTK+ dla wiêkszo¶ci poleceñ
-Bazaar. Dostêpnymi poleceniami s±:
+%description -l pl.UTF-8
+bzr-gtk jest wtyczkÄ… dla Bazaar-NG (bzr), ktÃ³ra ma na celu
+dostarczenie graficznego interfejsu GTK+ dla wiÄ™kszoÅ›ci poleceÅ„
+Bazaar. DostÄ™pnymi poleceniami sÄ…:
 - gcommit
 - gdiff
 - visualise
