@@ -1,5 +1,5 @@
 Summary:	Plugin for Bazaar-NG providing GUI to most operations
-Summary(pl.UTF-8):   Wtyczka do Bazaar-NG udostępniająca interfejs graficzny dla większości operacji
+Summary(pl.UTF-8):	Wtyczka do Bazaar-NG udostępniająca interfejs graficzny dla większości operacji
 Name:		bzr-gtk
 Version:	0.13.0
 Release:	1
