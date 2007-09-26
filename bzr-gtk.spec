@@ -1,17 +1,19 @@
 Summary:	Plugin for Bazaar-NG providing GUI to most operations
 Summary(pl.UTF-8):	Wtyczka do Bazaar-NG udostępniająca interfejs graficzny dla większości operacji
 Name:		bzr-gtk
-Version:	0.90.0
+%define		ver	0.91
+%define		minor	0
+Version:	%{ver}.%{minor}
 Release:	1
 License:	GPL v2
 Group:		Development/Version Control
-Source0:	http://samba.org/~jelmer/bzr/%{name}-%{version}.tar.gz
-# Source0-md5:	2fd76f9e3d9d8f56f1bb112cb0277634
+Source0:	https://launchpad.net/bzr-gtk/%{ver}/%{version}/+download/bzr-gtk-%{version}.tar.gz
+# Source0-md5:	3b5d9c517494988a83d7ccaae8a18e2f
 URL:		http://bazaar-vcs.org/bzr-gtk
 BuildRequires:	python >= 1:2.4
 BuildRequires:	rpmbuild(macros) >= 1.219
 %pyrequires_eq  python
-Requires:	bzr >= 0.90
+Requires:	bzr >= %{ver}
 Requires:	python-pygtk-glade
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
