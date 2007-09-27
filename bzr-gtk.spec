@@ -4,7 +4,7 @@ Name:		bzr-gtk
 %define		ver	0.91
 %define		minor	0
 Version:	%{ver}.%{minor}
-Release:	1
+Release:	2
 License:	GPL v2
 Group:		Development/Version Control
 Source0:	https://launchpad.net/bzr-gtk/%{ver}/%{version}/+download/bzr-gtk-%{version}.tar.gz
@@ -46,6 +46,7 @@ Bazaar. Dostępnymi poleceniami są:
 %install
 rm -rf $RPM_BUILD_ROOT
 %{__python} setup.py install \
+	--install-purelib %{py_sitedir} \
 	--optimize=2 \
 	--root=$RPM_BUILD_ROOT
 
@@ -69,7 +70,7 @@ EOF
 %defattr(644,root,root,755)
 %doc AUTHORS README TODO
 %attr(755,root,root) %{_bindir}/*
-%{py_sitescriptdir}/*
+%{py_sitedir}/*
 %{_pixmapsdir}/*
 %{_desktopdir}/*.desktop
 %{_datadir}/olive
