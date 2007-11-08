@@ -15,7 +15,6 @@ BuildRequires:	rpmbuild(macros) >= 1.219
 %pyrequires_eq  python
 Requires:	bzr >= %{ver}
 Requires:	python-pygtk-glade
-BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
