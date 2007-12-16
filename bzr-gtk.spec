@@ -4,7 +4,7 @@ Name:		bzr-gtk
 %define		ver	0.93
 %define		minor	0
 Version:	%{ver}.%{minor}
-Release:	1
+Release:	2
 License:	GPL v2
 Group:		Development/Version Control
 Source0:	https://launchpad.net/bzr-gtk/%{ver}/%{version}/+download/bzr-gtk-%{version}.tar.gz
@@ -15,6 +15,7 @@ BuildRequires:	rpmbuild(macros) >= 1.219
 %pyrequires_eq  python
 Requires:	bzr >= %{ver}
 Requires:	python-pygtk-glade
+Requires:	python-pygtk-gtk >= 2.10
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
