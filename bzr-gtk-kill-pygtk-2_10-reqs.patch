@@ -1,0 +1,31 @@
+=== modified file 'viz/branchwin.py'
+--- old/viz/branchwin.py	2007-11-28 23:18:51 +0000
++++ new/viz/branchwin.py	2007-12-15 23:27:59 +0000
+@@ -70,7 +70,7 @@
+         self.accel_group = gtk.AccelGroup()
+         self.add_accel_group(self.accel_group)
+ 
+-        gtk.Action.set_tool_item_type(gtk.MenuToolButton)
++        ## gtk.Action.set_tool_item_type(gtk.MenuToolButton)
+ 
+         self.prev_rev_action = gtk.Action("prev-rev", "_Previous Revision", "Go to the previous revision", gtk.STOCK_GO_DOWN)
+         self.prev_rev_action.set_accel_path("<viz>/Go/Previous Revision")
+@@ -328,7 +328,7 @@
+                 self.prev_rev_action.set_sensitive(False)
+                 prev_menu.hide()
+ 
+-            self.prev_button.set_menu(prev_menu)
++            ## self.prev_button.set_menu(prev_menu)
+ 
+             next_menu = gtk.Menu()
+             if len(children) > 0:
+@@ -348,7 +348,7 @@
+                 self.next_rev_action.set_sensitive(False)
+                 next_menu.hide()
+ 
+-            self.next_button.set_menu(next_menu)
++            ## self.next_button.set_menu(next_menu)
+ 
+             tags = []
+             if self.branch.supports_tags():
+
