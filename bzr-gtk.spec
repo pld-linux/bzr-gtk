@@ -11,11 +11,12 @@ Source0:	https://launchpad.net/bzr-gtk/%{ver}/%{version}/+download/bzr-gtk-%{ver
 # Source0-md5:	de4951911d7e39d88916d276177476f3
 URL:		http://bazaar-vcs.org/bzr-gtk
 BuildRequires:	python >= 1:2.4
+BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.219
 %pyrequires_eq  python
 Requires:	bzr >= %{ver}
-Requires:	python-pygtk-glade
-Requires:	python-pygtk-gtk >= 2.10
+Requires:	python-pygtk-glade >= 2:2.10
+Requires:	python-pygtk-gtk >= 2:2.10
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -45,6 +46,7 @@ Bazaar. Dostępnymi poleceniami są:
 
 %install
 rm -rf $RPM_BUILD_ROOT
+
 %{__python} setup.py install \
 	--install-purelib %{py_sitedir} \
 	--optimize=2 \
@@ -71,6 +73,6 @@ EOF
 %doc AUTHORS README TODO
 %attr(755,root,root) %{_bindir}/*
 %{py_sitedir}/*
+%{_datadir}/olive
 %{_pixmapsdir}/*
 %{_desktopdir}/*.desktop
-%{_datadir}/olive
