@@ -4,13 +4,13 @@ Name:		bzr-gtk
 %define		ver	0.93
 %define		minor	0
 Version:	%{ver}.%{minor}
-Release:	2
+Release:	1
 License:	GPL v2+
 Group:		Development/Version Control
 Source0:	https://launchpad.net/bzr-gtk/%{ver}/%{version}/+download/bzr-gtk-%{version}.tar.gz
 # Source0-md5:	de4951911d7e39d88916d276177476f3
 URL:		http://bazaar-vcs.org/bzr-gtk
-BuildRequires:	python >= 1:2.5
+BuildRequires:	python >= 1:2.4
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.219
 Requires(post,postun):	desktop-file-utils
@@ -75,7 +75,6 @@ EOF
 %attr(755,root,root) %{_bindir}/olive-gtk
 %{py_sitedir}/bzrlib/plugins/gtk
 %{py_sitedir}/olive
-%{py_sitedir}/bzr_gtk-*.egg-info
 %{_datadir}/olive
 %{_pixmapsdir}/olive-gtk.png
 %{_desktopdir}/bazaar-properties.desktop
