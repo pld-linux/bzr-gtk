@@ -1,16 +1,22 @@
+# TODO: 
+#   - There is no 0.94 version packages although it is tagged in repo
+#     so I made my own binary file and added one simple fix.
+#     Hope regular binary files will be available soon
+#   - Fix locale files
 Summary:	Plugin for Bazaar-NG providing GUI to most operations
 Summary(pl.UTF-8):	Wtyczka do Bazaar-NG udostępniająca interfejs graficzny dla większości operacji
 Name:		bzr-gtk
-%define		ver	0.93
+%define		ver	0.94
 %define		minor	0
 Version:	%{ver}.%{minor}
-Release:	2
+Release:	1
 License:	GPL v2+
 Group:		Development/Version Control
-Source0:	https://launchpad.net/bzr-gtk/%{ver}/%{version}/+download/bzr-gtk-%{version}.tar.gz
-# Source0-md5:	de4951911d7e39d88916d276177476f3
+# Source0:	https://launchpad.net/bzr-gtk/%{ver}/%{version}/+download/bzr-gtk-%{version}.tar.gz
+Source0:	http://beauty.ant.gliwice.pl/bugs/bzr-gtk/bzr-gtk-trunk-matkor-20080515.tbz2
+# Source0-md5:	7448d27df65e0ca436558e143a8d69ae
 URL:		http://bazaar-vcs.org/bzr-gtk
-BuildRequires:	python >= 1:2.5
+BuildRequires:	python >= 1:2.4
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.219
 Requires(post,postun):	desktop-file-utils
@@ -18,6 +24,8 @@ Requires(post,postun):	desktop-file-utils
 Requires:	bzr >= %{ver}
 Requires:	python-pygtk-glade >= 2:2.10
 Requires:	python-pygtk-gtk >= 2:2.10
+Suggests:	python-pycairo
+Suggests:	python-gnome
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -40,7 +48,7 @@ Bazaar. Dostępnymi poleceniami są:
 - gbranch
 
 %prep
-%setup -q
+%setup -q -n bzr-gtk-trunk-matkor-20080515
 
 %build
 %{__python} setup.py build
@@ -74,10 +82,14 @@ EOF
 %doc AUTHORS NEWS README TODO
 %attr(755,root,root) %{_bindir}/olive-gtk
 %{py_sitedir}/bzrlib/plugins/gtk
-%{py_sitedir}/olive
-%{py_sitedir}/bzr_gtk-*.egg-info
 %{_datadir}/olive
 %{_pixmapsdir}/olive-gtk.png
 %{_desktopdir}/bazaar-properties.desktop
 %{_desktopdir}/bzr-notify.desktop
+%{_desktopdir}/bzr-handle-patch.desktop
 %{_desktopdir}/olive-gtk.desktop
+
+%{_datadir}/application-registry/bzr-gtk.applications
+%{_datadir}/bzr-gtk/icons
+%{_datadir}/icons/hicolor/scalable/emblems/
+%{_datadir}/pixmaps/bzr-icon-64.png
