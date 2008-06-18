@@ -9,7 +9,7 @@ Name:		bzr-gtk
 %define		ver	0.94
 %define		minor	0
 Version:	%{ver}.%{minor}
-Release:	1
+Release:	2
 License:	GPL v2+
 Group:		Development/Version Control
 # Source0:	https://launchpad.net/bzr-gtk/%{ver}/%{version}/+download/bzr-gtk-%{version}.tar.gz
@@ -89,7 +89,9 @@ EOF
 %{_desktopdir}/bzr-handle-patch.desktop
 %{_desktopdir}/olive-gtk.desktop
 
+%{_datadir}/application-registry
 %{_datadir}/application-registry/bzr-gtk.applications
-%{_datadir}/bzr-gtk/icons
+%{_datadir}/bzr-gtk
+#%%{_datadir}/bzr-gtk/icons
 %{_datadir}/icons/hicolor/scalable/emblems/
 %{_datadir}/pixmaps/bzr-icon-64.png
