@@ -1,0 +1,17 @@
+=== modified file 'seahorse.py'
+--- old/seahorse.py	2008-07-23 00:07:09 +0000
++++ new/seahorse.py	2008-08-05 13:55:03 +0000
+@@ -40,6 +40,12 @@
+         name = get_name()
+     else:
+         name = getattr(e, '_dbus_error_name', None)
++        
++    if name is None:
++        args = getattr(e, 'args', None) # This is case for old python-dbus-0.62
++        if args == ("Unable to determine the address of the message bus (try 'man dbus-launch' and 'man dbus-daemon' for help)",):
++            raise ImportError
++        
+     # DBus sometimes fails like this, just treat it as if seahorse is not
+     # available rather than crashing.
+     if name in ("org.freedesktop.DBus.Error.Spawn.ExecFailed", 
+

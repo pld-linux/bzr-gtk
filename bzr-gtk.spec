@@ -5,12 +5,13 @@ Name:		bzr-gtk
 %define		ver	0.95
 %define		minor	0
 Version:	%{ver}.%{minor}
-Release:	1
+Release:	2
 License:	GPL v2+
 Group:		Development/Version Control
 # Source0:	https://launchpad.net/bzr-gtk/%{ver}/%{version}/+download/bzr-gtk-%{version}.tar.gz
 Source0:	http://samba.org/~jelmer/bzr/bzr-gtk-%{version}.tar.gz
 # Source0-md5:	00aedce625672abca13d2d962b047ac0
+Patch0:		%{name}-dbus_detection_fix.patch
 URL:		http://bazaar-vcs.org/bzr-gtk
 BuildRequires:	python >= 1:2.4
 BuildRequires:	rpm-pythonprov
@@ -45,6 +46,8 @@ Bazaar. Dostępnymi poleceniami są:
 
 %prep
 %setup 
+%patch0 -p1
+
 
 %build
 %{__python} setup.py build
