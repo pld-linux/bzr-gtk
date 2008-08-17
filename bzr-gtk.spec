@@ -50,7 +50,6 @@ Bazaar. Dostępnymi poleceniami są:
 %setup -q
 %patch0 -p1
 
-
 %build
 %{__python} setup.py build
 
@@ -84,18 +83,16 @@ EOF
 %attr(755,root,root) %{_bindir}/olive-gtk
 %attr(755,root,root) %{_bindir}/bzr-handle-patch
 %attr(755,root,root) %{_bindir}/bzr-notify
-
 %{py_sitedir}/bzrlib/plugins/gtk
+%{_datadir}/bzr-gtk
 %{_datadir}/olive
-%{_pixmapsdir}/olive-gtk.png
 %{_desktopdir}/bazaar-properties.desktop
 %{_desktopdir}/bzr-notify.desktop
 %{_desktopdir}/bzr-handle-patch.desktop
 %{_desktopdir}/olive-gtk.desktop
-
+%{_pixmapsdir}/olive-gtk.png
+%{_pixmapsdir}/bzr-icon-64.png
+%{_iconsdir}/hicolor/scalable/emblems
+# FIXME: file duplicate
 %{_datadir}/application-registry
 %{_datadir}/application-registry/bzr-gtk.applications
-%{_datadir}/bzr-gtk
-#%%{_datadir}/bzr-gtk/icons
-%{_iconsdir}/hicolor/scalable/emblems/
-%{_pixmapsdir}/bzr-icon-64.png
