@@ -5,7 +5,7 @@ Summary:	Plugin for Bazaar-NG (bzr)
 Summary(pl.UTF-8):	Wtyczka do Bazaar-NG (bzr)
 Name:		bzr-gtk
 Version:	%{ver}.%{minor}
-Release:	4
+Release:	5
 License:	GPL v2+
 Group:		Development/Version Control
 # Source0:	https://launchpad.net/bzr-gtk/%{ver}/%{version}/+download/bzr-gtk-%{version}.tar.gz
@@ -93,6 +93,4 @@ EOF
 %{_pixmapsdir}/olive-gtk.png
 %{_pixmapsdir}/bzr-icon-64.png
 %{_iconsdir}/hicolor/scalable/emblems
-# FIXME: file duplicate
-%{_datadir}/application-registry
 %{_datadir}/application-registry/bzr-gtk.applications
