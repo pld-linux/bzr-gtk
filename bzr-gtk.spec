@@ -13,7 +13,10 @@ Source0:	http://samba.org/~jelmer/bzr/%{name}-%{version}.tar.gz
 # Source0-md5:	00aedce625672abca13d2d962b047ac0
 Patch0:		%{name}-dbus_detection_fix.patch
 URL:		http://bazaar-vcs.org/bzr-gtk
+BuildRequires:	gettext-devel
+BuildRequires:	pkgconfig
 BuildRequires:	python >= 1:2.4
+BuildRequires:	python-devel
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.219
 Requires(post,postun):	desktop-file-utils
