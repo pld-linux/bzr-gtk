@@ -1,6 +1,8 @@
-# TODO:  Add locale files
-%define		ver	0.95
-%define		minor	0
+# TODO:
+# - Add locale files
+# - Add new package for Olive, previously included here now it's own project: http://wiki.bazaar.canonical.com/Olive/
+%define		ver	0.99
+%define		minor	1
 Summary:	Plugin for Bazaar-NG (bzr)
 Summary(pl.UTF-8):	Wtyczka do Bazaar-NG (bzr)
 Name:		bzr-gtk
@@ -10,7 +12,7 @@ License:	GPL v2+
 Group:		Development/Version Control
 # Source0:	https://launchpad.net/bzr-gtk/%{ver}/%{version}/+download/bzr-gtk-%{version}.tar.gz
 Source0:	http://samba.org/~jelmer/bzr/%{name}-%{version}.tar.gz
-# Source0-md5:	00aedce625672abca13d2d962b047ac0
+# Source0-md5:	68354924f3104ab1ba7efc8bfe15ae0b
 Patch0:		%{name}-dbus_detection_fix.patch
 URL:		http://bazaar-vcs.org/bzr-gtk
 BuildRequires:	gettext-devel
@@ -36,7 +38,6 @@ interfaces to most Bazaar operations. Provided commands are:
 - visualise
 - gannotate
 - gbranch
-- olive-gtk (complete GUI branch manager)
 
 %description -l pl.UTF-8
 bzr-gtk jest wtyczką dla Bazaar-NG (bzr), która ma na celu
@@ -47,11 +48,10 @@ Bazaar. Dostępnymi poleceniami są:
 - visualise
 - gannotate
 - gbranch
-- olive-gtk (kompletny graficzny zarządca gałęzi bzr)
 
 %prep
 %setup -q
-%patch0 -p1
+#%patch0 -p1
 
 %build
 %{__python} setup.py build
@@ -83,17 +83,13 @@ EOF
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS NEWS README TODO
-%attr(755,root,root) %{_bindir}/olive-gtk
 %attr(755,root,root) %{_bindir}/bzr-handle-patch
 %attr(755,root,root) %{_bindir}/bzr-notify
 %{py_sitedir}/bzrlib/plugins/gtk
 %{_datadir}/bzr-gtk
-%{_datadir}/olive
 %{_desktopdir}/bazaar-properties.desktop
 %{_desktopdir}/bzr-notify.desktop
 %{_desktopdir}/bzr-handle-patch.desktop
-%{_desktopdir}/olive-gtk.desktop
-%{_pixmapsdir}/olive-gtk.png
 %{_pixmapsdir}/bzr-icon-64.png
 %{_iconsdir}/hicolor/scalable/emblems
 %{_datadir}/application-registry/bzr-gtk.applications
