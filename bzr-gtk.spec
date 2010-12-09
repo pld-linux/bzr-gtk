@@ -13,7 +13,6 @@ Group:		Development/Version Control
 # Source0:	https://launchpad.net/bzr-gtk/%{ver}/%{version}/+download/bzr-gtk-%{version}.tar.gz
 Source0:	http://samba.org/~jelmer/bzr/%{name}-%{version}.tar.gz
 # Source0-md5:	68354924f3104ab1ba7efc8bfe15ae0b
-Patch0:		%{name}-dbus_detection_fix.patch
 URL:		http://bazaar-vcs.org/bzr-gtk
 BuildRequires:	gettext-devel
 BuildRequires:	pkgconfig
@@ -51,7 +50,6 @@ Bazaar. Dostępnymi poleceniami są:
 
 %prep
 %setup -q
-#%patch0 -p1
 
 %build
 %{__python} setup.py build
