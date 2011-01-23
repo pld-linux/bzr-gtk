@@ -14,6 +14,7 @@ Group:		Development/Version Control
 Source0:	http://samba.org/~jelmer/bzr/%{name}-%{version}.tar.gz
 # Source0-md5:	68354924f3104ab1ba7efc8bfe15ae0b
 URL:		http://bazaar-vcs.org/bzr-gtk
+BuildRequires:	bzr >= %{ver}
 BuildRequires:	gettext-devel
 BuildRequires:	pkgconfig
 BuildRequires:	python >= 1:2.4
