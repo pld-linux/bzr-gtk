@@ -20,7 +20,7 @@ BuildRequires:	pkgconfig
 BuildRequires:	python >= 1:2.4
 BuildRequires:	python-devel
 BuildRequires:	rpm-pythonprov
-BuildRequires:	rpmbuild(macros) >= 1.219
+BuildRequires:	rpmbuild(macros) >= 1.710
 Requires(post,postun):	desktop-file-utils
 %pyrequires_eq	python
 Requires:	bzr >= %{ver}
